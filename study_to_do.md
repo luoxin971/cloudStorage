@@ -4,7 +4,7 @@
 
 ## Linux
 
--   grep
+-   grep, find
 -   tar
 -   sed
 -   awk
