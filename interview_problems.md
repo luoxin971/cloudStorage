@@ -217,6 +217,7 @@ Get请求参数很长怎么获取
 mysql 对于一些聚合函数count in等无法使用索引等情况如何优化
 spring boot 与spirng mvc 的区别
 java集合类
-
+orm框架
+mybatis 的特点，动态sql
 ```
 
