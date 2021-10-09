@@ -115,7 +115,44 @@
 
 
 
+-   HashMap
 
+    数组、链表（用链地址法解决哈希冲突）、红黑树，详见[美团技术团队](https://tech.meituan.com/2016/06/24/java-hashmap.html)的文章
+
+    <img src="https://gitee.com/xinlx/pic/raw/master/e4a19398.png" alt="HashMap 的存储方式" style="zoom: 36%;" />
+
+    <img src="https://gitee.com/xinlx/pic/raw/master/d669d29c.png" alt="HashMap 的 put 方法" style="zoom: 50%;" />
+
+    ```java
+    // Node 是 HashMap 的内部类
+    static class Node<K,V> implements Map.Entry<K,V> {
+            final int hash;    //用来定位数组索引位置
+            final K key;
+            V value;
+            Node<K,V> next;   //链表的下一个node
+    
+            Node(int hash, K key, V value, Node<K,V> next) { ... }
+            public final K getKey(){ ... }
+            public final V getValue() { ... }
+            public final String toString() { ... }
+            public final int hashCode() { ... }
+            public final V setValue(V newValue) { ... }
+            public final boolean equals(Object o) { ... }
+    }
+    ```
+
+    ```java
+    // HashMap 的几个字段
+    int threshold;             // 所能容纳的key-value对极限 
+    final float loadFactor;    // 负载因子，默认为 0.75
+    int modCount;  
+    int size;  // HashMap中实际存在的键值对数量
+    // threshold = length * Load factor 其中 length 默认值为 16
+    ```
+
+    
+
+    
 
 
 
