@@ -41,13 +41,13 @@ import java.util.concurrent.Executors;
 
 
 /*
-    int corePoolSize,
-    int maximumPoolSize,
-    long keepAliveTime,
-    TimeUnit unit,
-    BlockingQueue<Runnable> workQueue,
-    ThreadFactory threadFactory,
-    RejectedExecutionHandler handler
+    int corePoolSize, 核心线程池的大小
+    int maximumPoolSize, 最大核心线程池大小
+    long keepAliveTime, 超时没有人调用就会释放
+    TimeUnit unit, 超时单位
+    BlockingQueue<Runnable> workQueue, 阻塞队列
+    ThreadFactory threadFactory, 线程工厂
+    RejectedExecutionHandler handler 拒绝策略
  */
 public class Pool {
     public static void main(String[] args) {
@@ -72,3 +72,19 @@ public class Pool {
 }
 ```
 
+
+
+最大线程数该如何定义
+
+1.  CPU 密集型，物理cpu的核数
+2.  IO 密集型，判断程序中十分耗IO的线程，一般设置两倍，eg：15个IO的任务，就设置30个
+
+
+
+四大函数式接口
+
+lambda 表达式，链式编程，函数式接口，Stream 流式计算
+
+>   函数式接口：只有一个方法的接口
+>
+>   `@FunctionalInterface`
