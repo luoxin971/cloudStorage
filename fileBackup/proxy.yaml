@@ -39,10 +39,10 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
-  dx:
+  ho:
     type: http
-    path: ./aliyun_proxy_other.yaml
-    url: https://www.luoxin.vip/subconverter/sub?target=clash&url=http%3A%2F%2Fdy.paoche.cf%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Df0047a303ea8502c1af675599977cf6c&insert=false&emoji=true&list=true&tfo=false&scv=false&fdn=false&sort=false&new_name=true
+    path: ./aliyun_proxy_ho.yaml
+    url: https://www.luoxin.vip/subconverter/sub?target=clash&url=https%3A%2F%2Frss.966888.xyz%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D2d6e2a8ec97b0535495bde1672be1a87&insert=false&emoji=true&list=true&tfo=false&scv=false&fdn=false&sort=false&new_name=true
     interval: 3600
     health-check:
       enable: true
@@ -58,21 +58,21 @@ proxy-groups:
     use:
       - muge
 
-  - name: UrlTestDx
+  - name: UrlTestHo
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     use:
-      - dx
+      - ho
 
   - name: ProxyChoose
     type: select
     use:
       - muge
-      - dx
+      - ho
     proxies:
       - UrlTestMuge
-      - UrlTestDx
+      - UrlTestHo
 
   - name: Proxy
     type: select
