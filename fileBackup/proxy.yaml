@@ -32,8 +32,7 @@ dns:
 proxy-providers:
   muge:
     type: http
-    path: ./aliyun_proxy_list.yaml
-    url: https://pub-api-1.bianyuan.xyz/sub?target=clash&url=https%3A%2F%2Fdboo.cc%2F%2Flink%2FidBrGJIFqNEkToId%3Fclash%3D1&insert=false&emoji=true&list=true&tfo=false&scv=false&fdn=false&sort=false&new_name=true
+    path: ./proxies/muge.yaml
     interval: 3600
     health-check:
       enable: true
@@ -41,8 +40,7 @@ proxy-providers:
       interval: 300
   ho:
     type: http
-    path: ./aliyun_proxy_ho.yaml
-    url: https://pub-api-1.bianyuan.xyz/sub?target=clash&url=https%3A%2F%2Frss.966888.xyz%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D2d6e2a8ec97b0535495bde1672be1a87&insert=false&emoji=true&list=true&tfo=false&scv=false&fdn=false&sort=false&new_name=true    
+    path: ./proxies/ho.yaml
     interval: 3600
     health-check:
       enable: true
