@@ -15,19 +15,27 @@ import re
 def encode(url):
     return quote(url, 'utf-8')
 
-file_path = sys.argv[1] 
-url = sys.argv[2]
+def main():
+    url = sys.argv[1]
+    print(encode(url))
+    
+    if len(sys.argv) < 3:
+        return
+    file_path = sys.argv[2] 
+    
+    f1 = open(file_path, "r")
+    content = f1.read()
+    f1.close()
+    
+    encode_url = encode(url)
+    
+    # t = re.sub(r"(?<=luoxin\.vip/subconverter/sub\?target=clash&url=)(.*)(?=&insert)", encode(url), content )
+    t = re.sub(r"(?<=luoxin\.vip/subconverter/sub\?target=clash&url=)(.*)(?=&insert)", encode(url), content )
+    
+    with open(file_path, "w") as f2:
+        f2.write(t)
+    
+    print(encode_url)
 
-f1 = open(file_path, "r")
-content = f1.read()
-f1.close()
-
-encode_url = encode(url)
-
-t = re.sub("(?<=www\.luoxin\.vip:25500/sub\?target=clash&url=)(.*)(?=&insert)", encode_url, content )
-# t = re.sub(r"(?<=www\.luoxin\.vip:25500/sub\?target=clash&url=)(.*)(?=&insert)", encode(url), content )
-
-with open(file_path, "w") as f2:
-    f2.write(t)
-
-print(encode_url)
+if __name__ =='__main__':
+    main()
