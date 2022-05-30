@@ -201,6 +201,7 @@ rule-providers:
     interval: 86400
 
 rules:
+  - DOMAIN-KEYWORD,xkool,DIRECT
   - RULE-SET,applications,Direct
   - DOMAIN,clash.razord.top,Direct
   - DOMAIN,yacd.haishan.me,Direct
